@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+    background-color: #f7f8fa;
+    display: flex;
+    flex-direction: row; 
+    height: 100vh;
+    font-family: Roboto, sans-serif;
+}
+
+p {
+    font-size: 20px;
+    padding: 0px 0px 30px 30px;
+    margin-right: 300px;
+}
+
+#left-side {
+    width: 35vw;
+    height: 100vh;
+    background-color: #596D48;
+}
+
+#right-side {
+    width: 65vw;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+form {
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 6px 6px -6px rgb(192, 192, 192);
+}
