@@ -7,6 +7,9 @@
 	vertical-align: baseline;
     box-sizing: border-box;
     --dark-grey: rgb(44, 44, 44);
+    --background-green: #596D48;
+    --shadow-properties: 1px 1px 5px grey;
+    --invalid-color: rgb(201, 20, 20);
 }
 
 body {
@@ -17,7 +20,7 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-p {
+.header-text {
     font-size: 20px;
     padding-bottom: 10px;
     font-weight:600;
@@ -28,29 +31,34 @@ p {
     flex-direction: column;
     justify-content:flex-end;
     padding: 0 280px 15px 25px;
+    color: var(--dark-grey);
 }
 
 #left-side {
     width: 35vw;
     height: 100vh;
-    background-color: #596D48;
+    background-color: var(--background-green);
 }
 
 #right-side {
     width: 65vw;
     display:flex;
     flex-direction: column;
+    box-sizing:border-box;
 }
 
 .space {
-    height: 30%;
+    height: 30vh;
+}
+
+.form-height {
+    height: 40vh;
 }
 
 form {
     width: 100%;
     background-color: white;
     box-shadow: 0 6px 6px -6px rgb(192, 192, 192);
-    height: 40%;
     padding: 15px 0px 30px 30px;
 }
 
@@ -63,9 +71,20 @@ label {
 }
 
 input {
-    border: 1px solid lightgrey;
+    border: 1px solid #E5E7EB;
     border-radius:5px;
-    height: 24px;
+    height: 26px;
+    padding-left:3px;
+}
+
+input:focus {
+    outline: 1px solid rgb(0, 106, 172);
+    box-shadow: var(--shadow-properties);
+}
+
+input:invalid.interacted {
+    outline: 1px solid var(--invalid-color);
+    
 }
 
 .row {
@@ -85,5 +104,49 @@ h3 {
 .align {
     display: flex;
     flex-direction: column;
-    padding: 0px 15px 15px 0px;
+    padding: 0px 45px 15px 0px;
+    position: relative;
+}
+
+#submit {
+    padding: 15px 60px 15px 60px;
+    background-color: var(--background-green);
+    box-shadow: var(--shadow-properties);
+    border-radius: 8px;
+    color: white;
+    font-size:20px;
+    font-weight:600;
+    margin-top: 35px;
+    margin-left: 50px;
+}
+
+#submit:hover,
+#login-button:hover {
+    filter: brightness(90%);
+}
+
+#submit:focus,
+#login-button:focus {
+    filter: brightness(80%);
+}
+
+#login {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+#login-button {
+    color: var(--background-green);
+    font-weight: 600;
+    margin-left:5px;
+    background-color: inherit;
+}
+
+#matching-passwords {
+    position: absolute;
+    top: 40px;
+    font-size:12px;
+    color: var(--invalid-color);
 }
