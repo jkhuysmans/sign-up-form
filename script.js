@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     var inputs = document.querySelectorAll("input");
-    var buttonFocus = document.getElementById("submit");
 
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("blur", function() {
@@ -12,20 +11,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const matchingPasswords = document.getElementById("matching-passwords")
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("password-confirm");
+    const matchingPasswords = document.getElementById("matching-passwords");
 
     function comparePasswords() {
-        console.log("checking passwords")
-        var password1 = document.getElementById("password").value
-        var password2 = document.getElementById("password-confirm").value
+        console.log("checking passwords");
+        var password1 = passwordInput.value;
+        var password2 = confirmPasswordInput.value;
 
-        if (password1 !== password2) {
+        if (password1 !== password2 && password1 !== "" && password2 !== "") {
             matchingPasswords.textContent = "*Passwords do not match";
+            passwordInput.setCustomValidity("Passwords do not match.")
+            confirmPasswordInput.setCustomValidity("Passwords do not match.")
         } else {
             matchingPasswords.textContent = "";
+            passwordInput.setCustomValidity("")
+            confirmPasswordInput.setCustomValidity("")
         }
     }
 
-    document.getElementById("password").addEventListener("keyboard", comparePasswords())
-    document.getElementById("password-confirm").addEventListener("keyboard", comparePasswords())
-})
+    document.getElementById("password").addEventListener("input", comparePasswords);
+    document.getElementById("password-confirm").addEventListener("input", comparePasswords);
+});
