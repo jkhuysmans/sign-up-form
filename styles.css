@@ -27,6 +27,9 @@ body {
     flex-direction: row; 
     height: 100vh;
     font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: row;
+
 }
 
 .header-text {
@@ -44,7 +47,7 @@ body {
 }
 
 #left-side {
-    width: 30rem;
+    width: 50rem;
     background-color: var(--background-green);
     background-image: url('./background.avif');
     background-size: cover;
@@ -73,8 +76,8 @@ img {
 }
 
 #right-side {
-    width: 70rem;
     display:flex;
+    flex-grow:1;
     flex-direction: column;
     box-sizing:border-box;
 }
@@ -122,8 +125,6 @@ input:invalid.interacted {
     display:flex;
     flex-direction: row;
 }
-
-/* haut | droit | bas | gauche */
 
 h3 {
     padding-bottom: 20px;
