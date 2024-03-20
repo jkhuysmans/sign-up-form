@@ -84,7 +84,6 @@ input:focus {
 
 input:invalid.interacted {
     outline: 1px solid var(--invalid-color);
-    
 }
 
 .row {

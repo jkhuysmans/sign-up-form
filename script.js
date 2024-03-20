@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const passwordInput = document.getElementById("password");
-    const confirmPasswordInput = document.getElementById("password-confirm");
     const matchingPasswords = document.getElementById("matching-passwords");
+    var passwordInput = document.getElementById("password");
+    var confirmPasswordInput = document.getElementById("password-confirm");
 
     function comparePasswords() {
         console.log("checking passwords");
@@ -22,12 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (password1 !== password2 && password1 !== "" && password2 !== "") {
             matchingPasswords.textContent = "*Passwords do not match";
-            passwordInput.setCustomValidity("Passwords do not match.")
-            confirmPasswordInput.setCustomValidity("Passwords do not match.")
+            passwordInput.style.outline = "1px solid var(--invalid-color)";
         } else {
             matchingPasswords.textContent = "";
-            passwordInput.setCustomValidity("")
-            confirmPasswordInput.setCustomValidity("")
         }
     }
 
